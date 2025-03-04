@@ -98,7 +98,10 @@ This project is licensed under the MIT License.
 
 ## Future Enhancements
 
+* Better documentation
 * Option to upload files into a particular account
+* Option to upload files in bulk
+* Option to download files
 
 ## Author
 
