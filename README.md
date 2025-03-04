@@ -22,7 +22,7 @@ Uplink Fire is a Python-based desktop application designed for fast, automated f
 
 1.  **Clone the Repository:**
     ```bash
-    git clone https://github.com/Krishot7/MediaFire-Upload-Automation-Tool-UplinkFire.git
+    git clone https://github.com/Kr0issant/MediaFire-Upload-Automation-Tool-UplinkFire.git
     cd MediaFire-Upload-Automation-Tool-UplinkFire
     ```
 3.  **Setup venv**
