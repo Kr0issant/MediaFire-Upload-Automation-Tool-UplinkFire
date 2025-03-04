@@ -47,7 +47,7 @@ Uplink Fire is a Python-based desktop application designed for fast, automated f
     python uplinkfire.py
     ```
 
-## Usage
+## ⚽ Usage
 
 1.  **Account Management:**
     * Use the "Accounts" menu to manage MediaFire accounts.
@@ -68,7 +68,7 @@ Uplink Fire is a Python-based desktop application designed for fast, automated f
     * **Upload Duration:** Adjust the maximum time allotted for file uploading. Files exceeding this time will be interrupted.
     * **Captcha Duration:** Adjust the maximum time given for filling the reCAPTCHA during registration.
 
-## Troubleshooting
+## 🕷 Troubleshooting
 
 * **WebDriver Issues:**
     * If the WebDriver is not working correctly, download the latest stable version of `chromedriver.exe` from [https://googlechromelabs.github.io/chrome-for-testing/](https://googlechromelabs.github.io/chrome-for-testing/) and replace the existing one in the `UplinkFire` folder (or the `_internal` folder for the pre-built release).
@@ -81,30 +81,30 @@ Uplink Fire is a Python-based desktop application designed for fast, automated f
   * It is adviced to delete suspended accounts from the Accounts list
   * To prevent account suspension, log into each account at least once a year.
 
-## Limitations
+## 🚫 Limitations
 
 * Files bigger than 10 GB can not be uploaded.
 
-## Screenshots
+## 🖼 Screenshots
 ![Screenshot of UplinkFire Main Window](screenshots/main_menu.png)
 ![Screenshot of UplinkFire Accounts Window](screenshots/accounts_menu.png)
 (obviously, the passwords are not real)
 
-## Contributing
+## ❤ Contributing
 
 Contributions are welcome! Please feel free to submit pull requests or open issues.
 
-## License
+## 💲 License
 
 This project is licensed under the MIT License.
 
-## Dependencies
+## ❗ Dependencies
 
 * Selenium
 * MailTM
 * Pyperclip
 
-## Future Enhancements
+## ⏳ Future Enhancements
 
 * Support for Linux and MacOS
 * Better documentation
@@ -112,6 +112,6 @@ This project is licensed under the MIT License.
 * Option to upload files in bulk
 * Option to download files
 
-## Author
+## 🖋 Author
 
 [@Krishot7](https://github.com/Krishot7)
