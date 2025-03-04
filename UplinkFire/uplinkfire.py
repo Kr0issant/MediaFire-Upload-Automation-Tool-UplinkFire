@@ -1,4 +1,4 @@
-import time, json, pyperclip, os, random
+import time, json, pyperclip, os, random, secrets
 import tkinter as tk
 from tkinter import filedialog as fd
 from tkinter import messagebox as mb
@@ -81,24 +81,12 @@ class SeleniumBot:
         return link
 
     def register(self, upload=True, name=('John', 'Doe')):
-        def caesar_encrypt(text, shift):
-            encrypted_text = ""
-            for char in text:
-                if char.isalpha():
-                    # Determine if the character is uppercase or lowercase
-                    base = ord('A') if char.isupper() else ord('a')
-                    # Perform the shift
-                    encrypted_text += chr((ord(char) - base + shift) % 26 + base)
-                else:
-                    # Keep non-alphabet characters unchanged
-                    encrypted_text += char
-            return encrypted_text
-        
         #Get tempmail account
         tm = Email()
         tm.register()
         regmail = str(tm.address)
-        regpass = caesar_encrypt(regmail.split('@')[0], random.randint(1, 25))
+        password_length = random.randint(15, 29)
+        regpass = secrets.token_urlsafe(password_length)
 
         self.maingui.printc("Generated TempMail Account")
         self.maingui.printc(f"Email: {regmail}")
