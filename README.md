@@ -1,4 +1,4 @@
-# Uplink Fire
+# Uplink Fire 🔥
 
 Uplink Fire is a Python-based desktop application designed for fast, automated file uploads to MediaFire. It streamlines the upload process by managing MediaFire accounts, utilizing temporary email addresses for registration, and quickly generating shareable download links.
 
