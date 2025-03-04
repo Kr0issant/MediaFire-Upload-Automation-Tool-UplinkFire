@@ -2,18 +2,6 @@
 
 UplinkFire is a Python-based desktop application designed for fast, automated file uploads to MediaFire. It streamlines the upload process by managing MediaFire accounts, utilizing temporary email addresses for registration, and quickly generating shareable download links.
 
-# ![Screenshot of UplinkFire Main Window](screenshots/main_menu.png)
-# ![Screenshot of UplinkFire Accounts Window](screenshots/accounts_menu.png)
-
-<div style="display: flex;">
-  <div style="width: 50%;">
-    <img src="screenshots/main_menu.png" alt="Main Window" style="width: 100%; height: auto;">
-  </div>
-  <div style="width: 50%;">
-    <img src="screenshots/accounts_menu.png" alt="Accounts Window" style="width: 100%; height: auto;">
-  </div>
-</div>
-
 ## Features
 
 * **Automated MediaFire Uploads:** Quickly upload files to MediaFire with minimal user interaction.
@@ -89,6 +77,10 @@ UplinkFire is a Python-based desktop application designed for fast, automated fi
 ## Limitations
 
 * Files bigger than 10 GB can not be uploaded.
+
+# Screenshots
+![Screenshot of UplinkFire Main Window](screenshots/main_menu.png)
+![Screenshot of UplinkFire Accounts Window](screenshots/accounts_menu.png)
 
 ## Contributing
 
