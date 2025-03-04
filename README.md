@@ -62,7 +62,7 @@ Uplink Fire is a Python-based desktop application designed for fast, automated f
 1.  **Account Management:**
     * Use the "Accounts" menu to manage MediaFire accounts.
     * Add, edit, delete, and log in to accounts.
-    * Register new accounts using temporary email addresses.
+    * Register new accounts using temporary email addresses (automatic).
 2.  **File Upload:**
     * Select a file using the "Browse" button.
     * Click the "Upload" button.
