@@ -78,7 +78,7 @@ Uplink Fire is a Python-based desktop application designed for fast, automated f
 
 * Files bigger than 10 GB can not be uploaded.
 
-# Screenshots
+## Screenshots
 ![Screenshot of UplinkFire Main Window](screenshots/main_menu.png)
 ![Screenshot of UplinkFire Accounts Window](screenshots/accounts_menu.png)
 (obviously, the passwords are not real)
