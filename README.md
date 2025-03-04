@@ -88,7 +88,7 @@ Uplink Fire is a Python-based desktop application designed for fast, automated f
     
 * **Account Suspension**
   * If an account has been inactive for a long time, it will get suspended.
-  * It is adviced to delete suspended accounts from the Accounts list
+  * It is advised to delete suspended accounts from the Accounts list
   * To prevent account suspension, log into each account at least once a year.
 
 ## 🚫 Limitations
