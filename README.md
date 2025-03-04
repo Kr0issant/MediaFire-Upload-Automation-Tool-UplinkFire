@@ -2,7 +2,7 @@
 
 Uplink Fire is a Python-based desktop application designed for fast, automated file uploads to MediaFire. It streamlines the upload process by managing MediaFire accounts, utilizing temporary email addresses for registration, and quickly generating shareable download links.
 
-## Features
+## ⭐ Features
 
 * **Automated MediaFire Uploads:** Quickly upload files to MediaFire with minimal user interaction.
 * **Temporary Email Registration:** Uses mailtm for fast account creation, bypassing the need for personal email addresses.
@@ -13,28 +13,35 @@ Uplink Fire is a Python-based desktop application designed for fast, automated f
 * **Webdriver Control:** Option to force quit the WebDriver.
 * **Timing controls:** Controls for wait duration, upload duration and captcha duration.
 
-## Installation
+## 📋 Prerequisites
 
-1.  **Prerequisites:**
-    * Python 3.13x
-    * pip (Python package installer)
-    * selenium  v4.29.0
-    * mailtm  v0.0.81
-    * pyperclip  v1.9.0
-2.  **Clone the Repository:**
+   * Python 3.13 or higher
+   * pip (Python package installer)
+
+## ⚙️ Installation
+
+1.  **Clone the Repository:**
     ```bash
     git clone https://github.com/Krishot7/MediaFire-Upload-Automation-Tool-UplinkFire.git
     cd .\MediaFire-Upload-Automation-Tool-UplinkFire\
     ```
-3.  **Install Dependencies:**
+2.  **Setup venv**
+    ```bash
+    # Create new python virtual environment
+    python -m venv .venv
+    
+    # Activate the virtual environment
+    .venv\Scripts\activate
+    ```
+4.  **Install Dependencies:**
     ```bash
     pip install -r requirements.txt
     ```
-4.  **Configure WebDriver:**
+5.  **Configure WebDriver:**
     * Download the appropriate Chrome WebDriver for your chrome version in case the provided executable is outdated.
     * Replace the Chrome WebDriver executable in the `UplinkFire` folder.
     * Make sure to rename it to `chromedriver.exe` in case it has a different name.
-5.  **Run the Application:**
+6.  **Run the Application:**
     ```bash
     cd .\UplinkFire\
     python uplinkfire.py
@@ -99,6 +106,7 @@ This project is licensed under the MIT License.
 
 ## Future Enhancements
 
+* Support for Linux and MacOS
 * Better documentation
 * Option to upload files into a particular account
 * Option to upload files in bulk
