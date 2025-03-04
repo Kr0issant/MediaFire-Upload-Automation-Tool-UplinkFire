@@ -48,7 +48,7 @@ Uplink Fire is a Python-based desktop application designed for fast, automated f
     pip install -r requirements.txt
     ```
 6.  **Configure WebDriver:**
-    * Download the appropriate Chrome WebDriver for your chrome version in case the provided executable is outdated.
+    * Download the appropriate Chrome WebDriver for your chrome version and operating system (already provided for Windows, but might get outdated).
     * Replace the Chrome WebDriver executable in the `UplinkFire` folder.
     * Make sure to rename it to `chromedriver` in case it has a different name.
 7.  **Run the Application:**
