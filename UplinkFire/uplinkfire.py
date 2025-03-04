@@ -1,4 +1,4 @@
-import time, json, pyperclip, os, random, secrets
+import time, json, pyperclip, os, secrets, random, platform
 import tkinter as tk
 from tkinter import filedialog as fd
 from tkinter import messagebox as mb
@@ -27,6 +27,13 @@ def jsondump(data, file_path=accounts_path):
         json.dump(data, F, indent=4)
     return
 
+# Set chromedriver name based on Operating System
+if platform.system() == "Windows":
+    chromedriver_name = "chromedriver.exe"
+else:
+    chromedriver_name = "chromedriver"
+
+
 class SeleniumBot:
     def __init__(self, maingui, file_path, file_size):
         self.file_path = file_path
@@ -35,8 +42,8 @@ class SeleniumBot:
 
         self.maingui.printc(f"File Size Detected: {file_size} MB")
 
-        #Fetch file paths and Define custom user agent (to prevent bot detection)
-        chromedriver_path = Path(__file__).resolve().parent / 'chromedriver.exe'
+        # Fetch file paths and Define custom user agent (to prevent bot detection)
+        chromedriver_path = Path(__file__).resolve().parent / chromedriver_name
         custom_user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'
 
         options = webdriver.ChromeOptions()
@@ -81,7 +88,20 @@ class SeleniumBot:
         return link
 
     def register(self, upload=True, name=('John', 'Doe')):
-        #Get tempmail account
+        def caesar_encrypt(text, shift):
+            encrypted_text = ""
+            for char in text:
+                if char.isalpha():
+                    # Determine if the character is uppercase or lowercase
+                    base = ord('A') if char.isupper() else ord('a')
+                    # Perform the shift
+                    encrypted_text += chr((ord(char) - base + shift) % 26 + base)
+                else:
+                    # Keep non-alphabet characters unchanged
+                    encrypted_text += char
+            return encrypted_text
+        
+        # Get tempmail account
         tm = Email()
         tm.register()
         regmail = str(tm.address)
@@ -92,14 +112,14 @@ class SeleniumBot:
         self.maingui.printc(f"Email: {regmail}")
         self.maingui.printc(f"Password: {regpass}")
         
-        #Register in mediafire
+        # Register in mediafire
         self.driver.get("https://www.mediafire.com/upgrade/registration.php?pid=free")
 
         self.waititem('reg_first_name', 'id', 'send').send_keys(name[0])
         self.waititem('reg_last_name', 'id', 'send').send_keys(name[1])
         self.waititem('reg_email', 'id', 'send').send_keys(regmail)
         self.waititem('reg_pass', 'id', 'send').send_keys(regpass)
-        #Scroll down
+        # Scroll down
         ActionChains(self.driver)\
             .scroll_to_element(self.waititem('signup_continue', 'id', 'send'))\
             .scroll_by_amount(0, 150)\
@@ -136,7 +156,7 @@ class SeleniumBot:
         link = self.upload()
         print("Download Link: ", link)
 
-        #Save details in accounts.json
+        # Save details in accounts.json
         details = {"email": regmail, "password": regpass, "free": 10000 - self.file_size}
         with open(accounts_path, 'r+') as F:
             data = json.load(F)
@@ -162,7 +182,7 @@ class SeleniumBot:
                 else:
                     return
                 
-            #Iterate through accounts to find one with required free storage    
+            # Iterate through accounts to find one with required free storage    
             for i in A:
                 if not i['free'] > self.file_size:
                     continue
@@ -188,17 +208,17 @@ class SeleniumBot:
                     link = self.upload()
                     print("Download Link: ", link)
 
-                    #Reduce the free space for the account
+                    # Reduce the free space for the account
                     A[A.index(i)]['free'] -= self.file_size
                     jsondump(A)
                     self.maingui.printc("Account Storage Updated")
                     return link
                 
             self.maingui.printc("No Accounts with Required Free Storage. Attempting Registration")    
-            #No accounts with required free storage, then Register a new one
+            # No accounts with required free storage, then Register a new one
             link = self.register()
             if link is not None:
-                return link  #Return download link
+                return link  # Return download link
             else:
                 return
 
@@ -218,7 +238,7 @@ class AccountsGUI:
             data = json.load(F)
             self.data = data
 
-        #Define Elements
+        # Define Elements
         self.mainframe = tk.Frame(self.root)
 
         topframe = tk.Frame(self.mainframe)
@@ -251,7 +271,7 @@ class AccountsGUI:
         # List to Hold Table Entries
         self.entries = []
 
-        #Set Tableframe
+        # Set Tableframe
         self.tableframe = tk.Frame(self.mainframe)
         self.tableframe.columnconfigure(0, weight=1, minsize=3)
         self.tableframe.columnconfigure(1, weight=1, minsize=200)
@@ -276,7 +296,7 @@ class AccountsGUI:
         # Check if Edit mode is enabled
         _state = 'normal' if edit else 'readonly'
 
-        #Add Table Entries
+        # Add Table Entries
         for i, account in enumerate(self.data):
             row_entries = []
             for j in range(4):
@@ -676,23 +696,19 @@ class MainGUI:
         mb.showinfo(title, message)
 
     def browsefile(self):
-        path = fd.askopenfilename()
+        path = str(Path(fd.askopenfilename()))
         self.labelprint(self.filepathbox, path)
         self.log.insert(tk.END, "Added file:  " + path + "\n")
-        print(path)
-        self.path = path.replace('/', '\\')
-        print(self.path)
+        self.path = path
 
     def upload(self):
-        fpb = self.filepathbox.get()
+        fpb = str(Path(self.filepathbox.get()))
         if fpb == '':
             self.notice("Please select a file to upload!")
             return
-        elif fpb.replace('/', '\\') != self.path:
-            self.path = fpb.replace('/', '\\')
-            self.printc('File path updated!')
         else:
-            self.path = fpb.replace('/', '\\')
+            self.path = fpb
+            self.printc('File path updated!')
 
         if not os.path.exists(self.path):
             self.notice("File path does not exist!")
