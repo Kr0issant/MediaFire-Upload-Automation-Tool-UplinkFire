@@ -123,4 +123,4 @@ This project is licensed under the MIT License.
 
 ## 🖋 Author
 
-[@Krishot7](https://github.com/Krishot7)
+[@Kr0issant](https://github.com/Kr0issant)
