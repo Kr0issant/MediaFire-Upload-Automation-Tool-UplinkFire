@@ -88,19 +88,6 @@ class SeleniumBot:
         return link
 
     def register(self, upload=True, name=('John', 'Doe')):
-        def caesar_encrypt(text, shift):
-            encrypted_text = ""
-            for char in text:
-                if char.isalpha():
-                    # Determine if the character is uppercase or lowercase
-                    base = ord('A') if char.isupper() else ord('a')
-                    # Perform the shift
-                    encrypted_text += chr((ord(char) - base + shift) % 26 + base)
-                else:
-                    # Keep non-alphabet characters unchanged
-                    encrypted_text += char
-            return encrypted_text
-        
         # Get tempmail account
         tm = Email()
         tm.register()
