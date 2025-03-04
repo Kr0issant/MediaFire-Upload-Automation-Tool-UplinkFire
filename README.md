@@ -81,7 +81,7 @@ UplinkFire is a Python-based desktop application designed for fast, automated fi
 # Screenshots
 ![Screenshot of UplinkFire Main Window](screenshots/main_menu.png)
 ![Screenshot of UplinkFire Accounts Window](screenshots/accounts_menu.png)
-(obviously, the passowrds are not real)
+(obviously, the passwords are not real)
 
 ## Contributing
 
