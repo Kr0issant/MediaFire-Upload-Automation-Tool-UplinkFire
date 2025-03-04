@@ -50,7 +50,7 @@ Uplink Fire is a Python-based desktop application designed for fast, automated f
 6.  **Configure WebDriver:**
     * Download the appropriate Chrome WebDriver for your chrome version in case the provided executable is outdated.
     * Replace the Chrome WebDriver executable in the `UplinkFire` folder.
-    * Make sure to rename it to `chromedriver.exe` in case it has a different name.
+    * Make sure to rename it to `chromedriver` in case it has a different name.
 7.  **Run the Application:**
     ```bash
     cd UplinkFire
@@ -81,8 +81,8 @@ Uplink Fire is a Python-based desktop application designed for fast, automated f
 ## 🕷 Troubleshooting
 
 * **WebDriver Issues:**
-    * If the WebDriver is not working correctly, download the latest stable version of `chromedriver.exe` from [https://googlechromelabs.github.io/chrome-for-testing/](https://googlechromelabs.github.io/chrome-for-testing/) and replace the existing one in the `UplinkFire` folder (or the `_internal` folder for the pre-built release).
-    * Ensure the file is named `chromedriver.exe`.
+    * If the WebDriver is not working correctly, download the latest stable version of `chromedriver` from [https://googlechromelabs.github.io/chrome-for-testing/](https://googlechromelabs.github.io/chrome-for-testing/) and replace the existing one in the `UplinkFire` folder (or the `_internal` folder for the pre-built release).
+    * Ensure that the executable file is named `chromedriver`.
 * **Account Registration:**
     * If a reCAPTCHA appears, the automatic registration will halt. Manually complete the reCAPTCHA and click "Submit."
     
