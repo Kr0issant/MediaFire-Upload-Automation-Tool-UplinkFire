@@ -23,7 +23,7 @@ Uplink Fire is a Python-based desktop application designed for fast, automated f
 1.  **Clone the Repository:**
     ```bash
     git clone https://github.com/Kr0issant/MediaFire-Upload-Automation-Tool-UplinkFire.git
-    cd MediaFire-Upload-Automation-Tool-UplinkFire
+    cd UplinkFire
     ```
 3.  **Setup venv**
 
@@ -49,7 +49,7 @@ Uplink Fire is a Python-based desktop application designed for fast, automated f
     ```
 6.  **Configure WebDriver:**
     * Download the appropriate Chrome WebDriver for your chrome version and operating system (already provided for Windows, but might get outdated).
-    * Replace the Chrome WebDriver executable in the `UplinkFire` folder.
+    * Replace the Chrome WebDriver executable in the (inner) `UplinkFire` folder.
     * Make sure to rename it to `chromedriver` in case it has a different name.
 7.  **Run the Application:**
     ```bash
